@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float moveSpeedPlayer;
+    float bounds = 7.33f;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Move();
+    }
+
+    void Move()
+    {
+        float moveInput = Input.GetAxis("Horizontal");
+
+        Vector2 playerPosition = transform.position;
+        playerPosition.x = Mathf.Clamp(playerPosition.x + moveInput * moveSpeedPlayer * Time.deltaTime, -bounds, bounds);
+        transform.position = playerPosition;
     }
 }

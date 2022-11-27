@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class BorderFall : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
+        if(collision.gameObject.CompareTag("Ball"))
+        {
+            collision.gameObject.SetActive(false);
+            BallLives.obj.LoseHealt();
+            //no destruir la pelota, si no ponerla sobre la pala
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
+        //if colision es un upgrade simplemente se destruye
     }
 }

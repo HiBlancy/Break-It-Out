@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class BasicMovmentBall : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public  Vector2 initialVelocity;
+
+    Rigidbody2D ballRb;
+    bool isBallMoving;
+
     void Start()
     {
-        
+        ballRb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space) && !isBallMoving)
+        {
+            Launch();
+        }
+    }
+
+    void Launch()
+    {
+        transform.parent = null;
+        ballRb.velocity = initialVelocity;
+        isBallMoving = false;
     }
 }
