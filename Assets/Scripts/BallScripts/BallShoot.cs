@@ -18,7 +18,7 @@ public class BallShoot : MonoBehaviour
     void Start()
     {
         ballRb = GetComponent<Rigidbody2D>();
-        ResetPositions.obj.ResetPositionsBoth();
+        ballRb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     void Update()
