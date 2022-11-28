@@ -21,8 +21,14 @@ public class BallLives : MonoBehaviour
     public void LoseHealt()
     {
         ballLives--;
+
+        if (ballLives <= 0)
+        {
+            Time.timeScale = 0f;
+            gameOverPanel.SetActive(true);
+        }
+
         TextOnScreen.obj.UpdateOnScreen();
-        ChekingHealt();
     }
 
     public void GiveHeath()
@@ -30,13 +36,6 @@ public class BallLives : MonoBehaviour
         ballLives++;
     }
 
-    void ChekingHealt()
-    {
-        if(ballLives == 0)
-        {
-            gameOverPanel.SetActive(true);
-        }
-    }
     void OnDestroy()
     {
         obj = null;

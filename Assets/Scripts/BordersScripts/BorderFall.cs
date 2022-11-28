@@ -7,11 +7,10 @@ public class BorderFall : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Ball"))
-        {
-            collision.gameObject.SetActive(false);
-            BallLives.obj.LoseHealt();
-            //no destruir la pelota, si no ponerla sobre la pala
+        {          
+            ResetPositions.obj.ResetPositionsBoth();
 
+            BallLives.obj.LoseHealt();
         }
         //if colision es un upgrade simplemente se destruye
     }

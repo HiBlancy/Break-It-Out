@@ -2,16 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicMovmentBall : MonoBehaviour
+public class BallShoot : MonoBehaviour
 {
-    public  Vector2 initialVelocity;
+    public static BallShoot obj;
 
+    [SerializeField] Vector2 initialVelocity;
     Rigidbody2D ballRb;
-    bool isBallMoving;
+    public bool isBallMoving;
+
+    void Awake()
+    {
+        obj = this;
+    }
 
     void Start()
     {
         ballRb = GetComponent<Rigidbody2D>();
+        ResetPositions.obj.ResetPositionsBoth();
     }
 
     void Update()
@@ -24,8 +31,14 @@ public class BasicMovmentBall : MonoBehaviour
 
     void Launch()
     {
+        ballRb.constraints = RigidbodyConstraints2D.None;
         transform.parent = null;
         ballRb.velocity = initialVelocity;
-        isBallMoving = false;
+        isBallMoving = true;
+    }
+
+    void OnDestroy()
+    {
+        obj = null;
     }
 }
