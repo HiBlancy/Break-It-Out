@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class BallLives : MonoBehaviour
 {
-    public static BallLives obj;
+    public static BallLives Obj { get; private set; }
 
     [SerializeField] GameObject gameOverPanel;
     public int ballLives;
     void Awake()
     {
-        obj = this;
+        if(Obj != null && Obj != this)
+            Destroy(this);
+        else
+            Obj = this;
     }
 
     void Start()
@@ -22,22 +25,19 @@ public class BallLives : MonoBehaviour
     {
         ballLives--;
 
+        Debug.Log("Losing1");
+
         if (ballLives <= 0)
         {
             Time.timeScale = 0f;
             gameOverPanel.SetActive(true);
         }
 
-        TextOnScreen.obj.UpdateOnScreen();
+        TextOnScreen.Obj.UpdateOnScreen();
     }
 
     public void GiveHeath()
     {
         ballLives++;
-    }
-
-    void OnDestroy()
-    {
-        obj = null;
     }
 }

@@ -5,24 +5,21 @@ using UnityEngine.UI;
 
 public class TextOnScreen : MonoBehaviour
 {
-    public static TextOnScreen obj;
+    public static TextOnScreen Obj { get; private set; }
 
     [SerializeField] Text currentBallLives;
     [SerializeField] Text currentScore;
 
     void Awake()
     {
-        obj = this;
+        if (Obj != null && Obj != this)
+            Destroy(this);
+        else
+            Obj = this;
     }
-
     public void UpdateOnScreen()
     {
-        currentBallLives.text = "" + BallLives.obj.ballLives;
-        currentScore.text = "" + ScoreManager.obj.score;
-    }
-
-    void OnDestroy()
-    {
-        obj = null;
+        currentBallLives.text = "" + BallLives.Obj.ballLives;
+        currentScore.text = "" + ScoreManager.Obj.score;
     }
 }

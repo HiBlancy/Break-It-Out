@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
 {
-    public static PlayerMovment obj;
+    public static PlayerMovment Obj { get; private set; }
 
     public float moveSpeedPlayer;
     readonly float bounds = 7.33f;
 
     void Awake()
     {
-        obj = this;
+        if (Obj != null && Obj != this)
+            Destroy(this);
+        else
+            Obj = this;
     }
 
     void Update()
@@ -26,10 +29,5 @@ public class PlayerMovment : MonoBehaviour
         Vector2 playerPosition = transform.position;
         playerPosition.x = Mathf.Clamp(playerPosition.x + moveInput * moveSpeedPlayer * Time.deltaTime, -bounds, bounds);
         transform.position = playerPosition;
-    }
-
-    void OnDestroy()
-    {
-        obj = null;
     }
 }

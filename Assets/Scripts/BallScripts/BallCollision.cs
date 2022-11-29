@@ -12,19 +12,18 @@ public class BallCollision : MonoBehaviour
     {
         ballRb = GetComponent<Rigidbody2D>();
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Brick"))
         {
-            ScoreManager.obj.AddScore(giveScore);
+            ScoreManager.Obj.AddScore(giveScore);
 
             collision.gameObject.SetActive(false);
-        }
 
+            BrickCountOnScreen.Obj.BlocksDestroyed();
+        }
         FixOrientation();
     }
-
     void FixOrientation()
     {
         float velocityDealta = 0.5f;

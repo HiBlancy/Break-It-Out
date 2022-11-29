@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class ResetPositions : MonoBehaviour
 {
-    public static ResetPositions obj;
+    public static ResetPositions Obj { get; private set; }
 
     Transform player;
     Rigidbody2D ballRb;
     void Awake()
     {
-        obj = this;
+        if (Obj != null && Obj != this)
+            Destroy(this);
+        else
+            Obj = this;
     }
 
     void Start()
@@ -28,12 +31,7 @@ public class ResetPositions : MonoBehaviour
         //ball
         ballRb.transform.position = new Vector2(0, -4.1f);
         ballRb.constraints = RigidbodyConstraints2D.FreezeAll;
-        BallShoot.obj.transform.SetParent(player);
-        BallShoot.obj.isBallMoving = false;
-    }
-
-    void OnDestroy()
-    {
-        obj = null;
+        BallShoot.Obj.transform.SetParent(player);
+        BallShoot.Obj.isBallMoving = false;
     }
 }

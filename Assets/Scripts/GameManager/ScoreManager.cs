@@ -4,21 +4,18 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager obj;
+    public static ScoreManager Obj { get; private set; }
     public int score;
-
     void Awake()
     {
-        obj = this;
+        if (Obj != null && Obj != this)
+            Destroy(this);
+        else
+            Obj = this;
     }
     public void AddScore(int giveScore)
     {
         score += giveScore;
-        TextOnScreen.obj.UpdateOnScreen();
-    }
-
-    void OnDestroy()
-    {
-        obj = null;
+        TextOnScreen.Obj.UpdateOnScreen();
     }
 }

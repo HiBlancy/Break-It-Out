@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallShoot : MonoBehaviour
 {
-    public static BallShoot obj;
+    public static BallShoot Obj { get; private set; }
 
     [SerializeField] Vector2 initialVelocity;
     Rigidbody2D ballRb;
@@ -12,7 +12,10 @@ public class BallShoot : MonoBehaviour
 
     void Awake()
     {
-        obj = this;
+        if (Obj != null && Obj != this)
+            Destroy(this);
+        else
+            Obj = this;
     }
 
     void Start()
@@ -35,10 +38,5 @@ public class BallShoot : MonoBehaviour
         transform.parent = null;
         ballRb.velocity = initialVelocity;
         isBallMoving = true;
-    }
-
-    void OnDestroy()
-    {
-        obj = null;
     }
 }
