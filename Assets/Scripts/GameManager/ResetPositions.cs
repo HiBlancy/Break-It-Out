@@ -8,6 +8,8 @@ public class ResetPositions : MonoBehaviour
 
     Transform player;
     Rigidbody2D ballRb;
+    GameObject [] upgradeBall;
+
     void Awake()
     {
         if (Obj != null && Obj != this)
@@ -33,5 +35,10 @@ public class ResetPositions : MonoBehaviour
         ballRb.constraints = RigidbodyConstraints2D.FreezeAll;
         BallShoot.Obj.transform.SetParent(player);
         BallShoot.Obj.isBallMoving = false;
+
+        //upgrades
+        upgradeBall = GameObject.FindGameObjectsWithTag("Upgrade");
+        foreach (GameObject go in upgradeBall)
+            go.SetActive(false);
     }
 }

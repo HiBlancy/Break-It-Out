@@ -11,10 +11,5 @@ public class BorderFall : MonoBehaviour
             BallLives.Obj.LoseHealt();
             ResetPositions.Obj.ResetPositionsBoth();
         }
-
-        if (collision.gameObject.CompareTag("Brick"))
-        {
-            collision.gameObject.SetActive(false);
-        }
     }
 }

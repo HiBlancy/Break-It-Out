@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class UpgradeFall : MonoBehaviour
 {
-    [SerializeField] GameObject[] Upgrades;
-    int selectUpgrade;
+    private void Start()
+    {
+        _ = GameObject.FindGameObjectsWithTag("Upp").Length;
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Touched Player");
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Touched Player");
 
-        selectUpgrade = Random.Range(0, Upgrades.Length);
-        Upgrades[selectUpgrade].SetActive(true);
-        gameObject.SetActive(false);
+            SelectUpgrade.Obj.CallingUpgrade();
+
+            gameObject.SetActive(false);
+        }
+        else
+            gameObject.SetActive(false);      
     }
 }
