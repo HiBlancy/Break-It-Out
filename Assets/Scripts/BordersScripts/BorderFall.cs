@@ -12,7 +12,7 @@ public class BorderFall : MonoBehaviour
             ResetPositions.Obj.ResetPositionsBoth();
         }
 
-        if (collision.gameObject.CompareTag("Upgrade"))
+        if (collision.gameObject.CompareTag("Brick"))
         {
             collision.gameObject.SetActive(false);
         }

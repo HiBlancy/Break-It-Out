@@ -7,9 +7,8 @@ public class BrickCountOnScreen : MonoBehaviour
 {
     public static BrickCountOnScreen Obj { get; private set; }
 
-    int posibilityForUpgrade;
-
     int blocksLeft;
+
     void Awake()
     {
         if (Obj != null && Obj != this)
@@ -27,15 +26,8 @@ public class BrickCountOnScreen : MonoBehaviour
         blocksLeft--;
         if (blocksLeft <= 0)
             LoadNextLevel();
-
-        posibilityForUpgrade = Random.Range(0, 4);
-        Debug.Log(posibilityForUpgrade);
-        if (posibilityForUpgrade == 0)
-        {
-            RandomForUpgrades.Obj.RandomUpgrade();
-        }      
     }
-
+   
     void LoadNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

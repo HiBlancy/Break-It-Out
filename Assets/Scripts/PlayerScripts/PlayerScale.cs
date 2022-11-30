@@ -20,7 +20,7 @@ public class PlayerScale : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
-    private void Update()
+    void Update()
     {
         player.transform.localScale = new Vector2(scale, 0.2f);
     }
