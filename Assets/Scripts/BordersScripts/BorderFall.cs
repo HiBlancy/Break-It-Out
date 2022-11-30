@@ -11,6 +11,10 @@ public class BorderFall : MonoBehaviour
             BallLives.Obj.LoseHealt();
             ResetPositions.Obj.ResetPositionsBoth();
         }
-        //if colision es un upgrade simplemente se destruye
+
+        if (collision.gameObject.CompareTag("Upgrade"))
+        {
+            collision.gameObject.SetActive(false);
+        }
     }
 }

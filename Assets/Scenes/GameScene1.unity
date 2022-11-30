@@ -432,7 +432,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1052946975}
+  - {fileID: 4861720196171083557}
   - {fileID: 1491927960}
   - {fileID: 2036063826}
   - {fileID: 1186332448}
@@ -889,11 +889,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2986414956244948940, guid: 6bd100d60ddb65e43b61f7294c3f7b9c, type: 3}
   m_PrefabInstance: {fileID: 1009292641}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1052946975 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2986414956244948940, guid: 6bd100d60ddb65e43b61f7294c3f7b9c, type: 3}
-  m_PrefabInstance: {fileID: 7640827732220868841}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1094713714 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2122333136375450375, guid: 844e9cfbb01f40c44bf3174f47a25083, type: 3}
@@ -1172,6 +1167,10 @@ PrefabInstance:
     - target: {fileID: 7855506787137301222, guid: 185fd715342dc43469344e16d127c226, type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855506787137301222, guid: 185fd715342dc43469344e16d127c226, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8618026885273160288, guid: 185fd715342dc43469344e16d127c226, type: 3}
       propertyPath: m_RootOrder
@@ -1501,6 +1500,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickL1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 803677698935364357, guid: 6bd100d60ddb65e43b61f7294c3f7b9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2986414956244948940, guid: 6bd100d60ddb65e43b61f7294c3f7b9c, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1544,6 +1547,10 @@ PrefabInstance:
     - target: {fileID: 2986414956244948940, guid: 6bd100d60ddb65e43b61f7294c3f7b9c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106008894301746741, guid: 6bd100d60ddb65e43b61f7294c3f7b9c, type: 3}
+      propertyPath: m_Constraints
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bd100d60ddb65e43b61f7294c3f7b9c, type: 3}
@@ -2189,6 +2196,7 @@ MonoBehaviour:
   Upgrades:
   - {fileID: 1991703134}
   - {fileID: 2095161850}
+  myPrefabUpgrade: {fileID: 7764563310904092303, guid: 7e88cae086c013b4c829ea640231f51a, type: 3}
 --- !u!4 &2142118644
 Transform:
   m_ObjectHideFlags: 0
@@ -2457,6 +2465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d683a3908fc5ca545bc5385d229633d0, type: 3}
+--- !u!4 &4861720196171083557 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2986414956244948940, guid: 6bd100d60ddb65e43b61f7294c3f7b9c, type: 3}
+  m_PrefabInstance: {fileID: 7640827732220868841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5233411869324963920
 PrefabInstance:
   m_ObjectHideFlags: 0

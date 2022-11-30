@@ -31,7 +31,9 @@ public class BrickCountOnScreen : MonoBehaviour
         posibilityForUpgrade = Random.Range(0, 4);
         Debug.Log(posibilityForUpgrade);
         if (posibilityForUpgrade == 0)
+        {
             RandomForUpgrades.Obj.RandomUpgrade();
+        }      
     }
 
     void LoadNextLevel()

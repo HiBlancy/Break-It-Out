@@ -18,8 +18,10 @@ public class PlayerScale : MonoBehaviour
     }
     void Start()
     {
-        scale = 3;
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+    }
+    private void Update()
+    {
         player.transform.localScale = new Vector2(scale, 0.2f);
     }
 }

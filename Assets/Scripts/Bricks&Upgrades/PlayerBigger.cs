@@ -5,21 +5,20 @@ using UnityEngine;
 public class PlayerBigger : MonoBehaviour
 {
     Transform player;
+
+   // GameObject theUpgrates;
+
+    void OnEnable()
+    {
+        Debug.Log("bigger");
+    //    theUpgrates.GetComponent<UpgradeFall>().enabled = true;
+        PlayerScale.Obj.scale = PlayerScale.Obj.scale + 0.5f;
+        gameObject.SetActive(false);
+    }
+
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-        PlayerGetsBigger();
-    }
-    void PlayerGetsBigger()
-    {
-        Debug.Log("bigger");
-        player.transform.localScale = new Vector2(PlayerScale.Obj.scale + 0.5f, 0.2f);
-        StartCoroutine(DesactivateThis());
-    }
-
-    IEnumerator DesactivateThis()
-    {
-        yield return new WaitForSeconds(1f);
-        gameObject.SetActive(false);
+    //    theUpgrates = GameObject.FindWithTag("Upgrade");
     }
 }
