@@ -25,8 +25,6 @@ public class BallLives : MonoBehaviour
     {
         ballLives--;
 
-        Debug.Log("Losing1");
-
         if (ballLives <= 0)
         {
             Time.timeScale = 0f;

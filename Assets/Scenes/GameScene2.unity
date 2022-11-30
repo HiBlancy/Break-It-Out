@@ -1297,6 +1297,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 599999298}
     m_Modifications:
+    - target: {fileID: 6507075526624472468, guid: 185fd715342dc43469344e16d127c226, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 697593435}
     - target: {fileID: 7855506787137301222, guid: 185fd715342dc43469344e16d127c226, type: 3}
       propertyPath: m_Name
       value: Ball

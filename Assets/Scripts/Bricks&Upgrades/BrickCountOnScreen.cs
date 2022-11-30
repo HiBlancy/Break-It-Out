@@ -7,6 +7,8 @@ public class BrickCountOnScreen : MonoBehaviour
 {
     public static BrickCountOnScreen Obj { get; private set; }
 
+    int posibilityForUpgrade;
+
     int blocksLeft;
     void Awake()
     {
@@ -15,7 +17,6 @@ public class BrickCountOnScreen : MonoBehaviour
         else
             Obj = this;
     }
-
     void Start()
     {
         blocksLeft = GameObject.FindGameObjectsWithTag("Brick").Length;
@@ -26,6 +27,11 @@ public class BrickCountOnScreen : MonoBehaviour
         blocksLeft--;
         if (blocksLeft <= 0)
             LoadNextLevel();
+
+        posibilityForUpgrade = Random.Range(0, 4);
+        Debug.Log(posibilityForUpgrade);
+        if (posibilityForUpgrade == 0)
+            RandomForUpgrades.Obj.RandomUpgrade();
     }
 
     void LoadNextLevel()
