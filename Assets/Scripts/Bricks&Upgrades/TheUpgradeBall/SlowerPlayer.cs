@@ -8,7 +8,6 @@ public class SlowerPlayer : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("Player slower");
         PlayerMovment.Obj.moveSpeedPlayer = PlayerMovment.Obj.moveSpeedPlayer - 0.5f;
         gameObject.SetActive(false);
     }

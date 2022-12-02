@@ -8,7 +8,6 @@ public class PlayerSmaller : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("smaller");
         PlayerScale.Obj.scale = PlayerScale.Obj.scale - 0.5f;
         gameObject.SetActive(false);
     }

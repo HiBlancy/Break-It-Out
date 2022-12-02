@@ -123,4 +123,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPrefabUpgrade: {fileID: 244257010935674371, guid: 5c87ba27962f8ff4995dc9b0abb66a2f, type: 3}
-  giveScore: 100

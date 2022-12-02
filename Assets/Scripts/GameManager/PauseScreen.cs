@@ -27,6 +27,13 @@ public class PauseScreen : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+    }
+
     public void BackToGame()
     {
         Time.timeScale = 1f;
@@ -39,9 +46,4 @@ public class PauseScreen : MonoBehaviour
         optionsPanel.SetActive(true);
         GamePaused = true;
     }
-    public void MainMenuScene()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
 }

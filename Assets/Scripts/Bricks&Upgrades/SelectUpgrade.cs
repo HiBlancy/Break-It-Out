@@ -19,7 +19,6 @@ public class SelectUpgrade : MonoBehaviour
 
     public void CallingUpgrade()
     {
-        Debug.Log("Selecting");
         selectUpgrade = Random.Range(0, Upgrades.Length);
         Upgrades[selectUpgrade].SetActive(true);
     }

@@ -12,7 +12,6 @@ public class ChangeVelociyBall : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("Ball velocity changed");
         BallShoot.Obj.initialVelocity = new Vector2(Random.Range(-8, 8), Random.Range(-8, 8));
         gameObject.SetActive(false);
     }

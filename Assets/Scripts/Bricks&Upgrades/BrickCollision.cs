@@ -14,7 +14,6 @@ public class BrickCollision : MonoBehaviour
 
         posibilityForUpgrade = Random.Range(0, 4);
 
-        Debug.Log(posibilityForUpgrade);
         if (posibilityForUpgrade == 0)
         {
             Instantiate(myPrefabUpgrade, transform.localPosition, Quaternion.identity);

@@ -7,6 +7,9 @@ public class BallLives : MonoBehaviour
     public static BallLives Obj { get; private set; }
 
     [SerializeField] GameObject gameOverPanel;
+
+    [SerializeField] AudioSource gameOverSound;
+    [SerializeField] AudioSource fallSound;
     public int ballLives;
     void Awake()
     {
@@ -24,11 +27,13 @@ public class BallLives : MonoBehaviour
     public void LoseHealt()
     {
         ballLives--;
+        fallSound.Play();
 
         if (ballLives <= 0)
         {
-            Time.timeScale = 0f;
+            gameOverSound.Play();
             gameOverPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
 
         TextOnScreen.Obj.UpdateOnScreen();

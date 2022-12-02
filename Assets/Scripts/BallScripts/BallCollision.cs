@@ -5,14 +5,17 @@ using UnityEngine;
 public class BallCollision : MonoBehaviour
 {
     Rigidbody2D ballRb;
+    [SerializeField] AudioSource collSound;
 
     void Start()
     {
         ballRb = GetComponent<Rigidbody2D>();
+        collSound = GetComponent<AudioSource>();
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         FixOrientation();
+        collSound.Play();
     }
     void FixOrientation()
     {

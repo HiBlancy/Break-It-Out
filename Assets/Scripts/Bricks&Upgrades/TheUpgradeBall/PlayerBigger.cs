@@ -8,7 +8,6 @@ public class PlayerBigger : MonoBehaviour
 
     void OnEnable()
     {
-        Debug.Log("bigger");
         PlayerScale.Obj.scale = PlayerScale.Obj.scale + 0.5f;
         gameObject.SetActive(false);
     }
