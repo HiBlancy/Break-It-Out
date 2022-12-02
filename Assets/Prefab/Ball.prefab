@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783ffe618524b854db6d91ef52a24b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  giveScore: 100
 --- !u!58 &5590431741388674817
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -160,7 +159,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 6810991f7761f0a46a84faeb459dbb54, type: 2}
+  m_Material: {fileID: 6200000, guid: 9a60c19373b1e564da7125799387d643, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

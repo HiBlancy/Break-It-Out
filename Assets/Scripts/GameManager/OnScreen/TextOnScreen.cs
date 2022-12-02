@@ -8,7 +8,6 @@ public class TextOnScreen : MonoBehaviour
     public static TextOnScreen Obj { get; private set; }
 
     [SerializeField] Text currentBallLives;
-    [SerializeField] Text currentScore;
 
     void Awake()
     {
@@ -20,6 +19,5 @@ public class TextOnScreen : MonoBehaviour
     public void UpdateOnScreen()
     {
         currentBallLives.text = "" + BallLives.Obj.ballLives;
-        currentScore.text = "" + ScoreManager.Obj.score;
     }
 }

@@ -21,13 +21,13 @@ public class BallCollision : MonoBehaviour
 
         if (Mathf.Abs(ballRb.velocity.x) < minVelocity)
         {
-            velocityDealta = Random.value < 0.4f ? velocityDealta : -velocityDealta;
+            velocityDealta = Random.value < 0.5f ? velocityDealta : -velocityDealta;
             ballRb.velocity += new Vector2(velocityDealta, 0f);
         }
         if (Mathf.Abs(ballRb.velocity.y) < minVelocity)
         {
-            velocityDealta = Random.value < 0.4f ? velocityDealta : -velocityDealta;
-            ballRb.velocity += new Vector2(velocityDealta, 0f);
+            velocityDealta = Random.value < 0.5f ? velocityDealta : -velocityDealta;
+            ballRb.velocity += new Vector2(0f, velocityDealta);
         }
     }
 }

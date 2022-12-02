@@ -6,7 +6,7 @@ public class BallShoot : MonoBehaviour
 {
     public static BallShoot Obj { get; private set; }
 
-    [SerializeField] Vector2 initialVelocity;
+    public Vector2 initialVelocity;
     Rigidbody2D ballRb;
     public bool isBallMoving;
 
@@ -34,6 +34,7 @@ public class BallShoot : MonoBehaviour
 
     void Launch()
     {
+        initialVelocity = new Vector2(Random.Range(-4, 4), 6);
         ballRb.constraints = RigidbodyConstraints2D.None;
         transform.parent = null;
         ballRb.velocity = initialVelocity;

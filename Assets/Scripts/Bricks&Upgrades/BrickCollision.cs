@@ -8,11 +8,8 @@ public class BrickCollision : MonoBehaviour
 
     public GameObject myPrefabUpgrade;
 
-    public int giveScore = 100;
-
     void OnCollisionEnter2D(Collision2D collision)
     {
-        ScoreManager.Obj.AddScore(giveScore);
         BrickCountOnScreen.Obj.BlocksDestroyed();
 
         posibilityForUpgrade = Random.Range(0, 4);

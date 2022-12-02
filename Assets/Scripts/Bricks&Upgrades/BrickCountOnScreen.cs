@@ -24,6 +24,7 @@ public class BrickCountOnScreen : MonoBehaviour
     public void BlocksDestroyed()
     {
         blocksLeft--;
+        Debug.Log(blocksLeft);
         if (blocksLeft <= 0)
             LoadNextLevel();
     }
